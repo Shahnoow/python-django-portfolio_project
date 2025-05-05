@@ -1,0 +1,101 @@
+body {
+    background-color: #1a1a2e;
+}
+
+header.jumbotron {
+    padding: 4rem 1rem;
+}
+
+.neon-text {
+    color: #ad10dd;
+    /* text-shadow: 0 0 5px #ad10dd, 0 0 10px #e94560, 0 0 15px #e94560; */
+}
+
+.card {
+    border: 2px solid #ad10dd;
+    background-color: #1a1a2e;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    /* box-shadow: 0 0 20px #ad10dd, 0 0 30px #ad10dd; */
+}
+
+.neon-link {
+    color: #ad10dd;
+    transition: all 0.3s ease-in-out;
+}
+
+.neon-link:hover {
+    text-shadow: 0 0 20px #ad10dd, 0 0 30px #ad10dd;
+}
+
+.neon-progress {
+    background-color: #ad10dd;
+}
+
+.card-title {
+    color: #ad10dd;
+    /* text-shadow: 0 0 5px #e94560, 0 0 10px #e94560; */
+}
+
+.list-group-item {
+    background-color: #1a1a2e;
+    color: #ffffff;
+}
+
+.btn-outline-light {
+    color: #ffffff;
+    border-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-light:hover {
+    background-color: #ad10dd;
+    color: #ffffff;
+    /* box-shadow: 0 0 20px #ad10dd; */
+}
+
+.form-group label {
+    color: #ffffff;
+}
+
+.form-control {
+    background-color: #1a1a2e;
+    color: #ffffff;
+    border: 1px solid #ad10dd;
+}
+
+.form-control:focus {
+    background-color: #1a1a2e;
+    border-color: #ad10dd;
+    /* box-shadow: 0 0 5px #ad10dd; */
+}
+
+textarea.form-control {
+    resize: none;
+}
+
+footer {
+    color: #ad10dd;
+    /* text-shadow: 0 0 5px #ad10dd, 0 0 10px #e94560; */
+}
+
+.contact-main {
+    /* color: #ffffff; */
+    background-color: #1a1a2e;
+    padding: 2rem;
+}
+
+.contact-main h2 {
+    color: #ffffff;
+    background-color: #1a1a2e;
+    padding: 2rem;
+}
+
+.contact-main h2 p{
+    /* color: #ffffff; */
+    background-color: #1a1a2e;
+    padding: 2rem;
+}
