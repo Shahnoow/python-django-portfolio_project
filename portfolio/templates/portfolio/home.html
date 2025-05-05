@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio - Home</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'portfolio/styles.css' %}" />
+  </head>
+  <body class="bg-dark text-light">
+    <header class="jumbotron text-center bg-transparent">
+      <h1 class="display-4 neon-text">Welcome to My Portfolio</h1>
+      <p class="lead">Innovative Solutions and Creative Development</p>
+    </header>
+
+    <section id="skills" class="container my-5">
+      <h2 class="text-center">My Skills</h2>
+      <div class="row">
+        {% for skill in skills %}
+        <div class="col-md-4 mb-4">
+          <h4 class="neon-text">{{ skill.name }}</h4>
+          <div class="progress">
+            <div
+              class="progress-bar neon-progress"
+              role="progressbar"
+              style="width: {{ skill.proficiency }}%;python manage.py shell"
+              aria-valuenow="{{ skill.proficiency }}"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              {{ skill.proficiency }}%
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="projects" class="container my-5">
+      <h2 class="text-center">Projects</h2>
+      <div class="row">
+        {% for project in projects %}
+        <div class="col-md-4 mb-4">
+          <div class="card bg-dark border-light">
+            <img
+              src="{{ project.image.url }}"
+              class="card-img-top"
+              alt="{{ project.title }}"
+            />
+            <div class="card-body">
+              <h5 class="card-title neon-text">{{ project.title }}</h5>
+              <p class="card-text">{{ project.description }}</p>
+              {% if project.link %}
+              <a
+                href="{{ project.link }}"
+                class="btn btn-outline-light"
+                target="_blank"
+                >View Project</a
+              >
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="achievements" class="container my-5">
+      <h2 class="text-center">Achievements</h2>
+      <div class="row">
+        {% for achievement in achievements %}
+        <div class="col-md-4 mb-4">
+          <div class="card bg-dark border-light">
+            {% if achievement.image %}
+            <img
+              src="{{ achievement.image.url }}"
+              alt="{{ achievement.title }}"
+              class="card-img-top"
+              style="max-height: 200px; object-fit: cover"
+            />
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title neon-text">
+                {{ achievement.title }} <small>({{ achievement.date }})</small>
+              </h5>
+              <p class="card-text">{{ achievement.description }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <footer class="text-center py-3">
+      <p>
+        Contact me <a href="{% url 'contact' %}" class="neon-link">here</a>.
+      </p>
+    </footer>
+  </body>
+</html>
